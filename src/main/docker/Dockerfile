@@ -1,5 +1,5 @@
 FROM frolvlad/alpine-oraclejdk8:slim
-RUN run --rm -v "$(pwd)":/mnt --workdir /mnt frolvlad/alpine-oraclejdk8:slim
+RUN --rm -v "$(pwd)":/mnt --workdir /mnt frolvlad/alpine-oraclejdk8:slim
 ADD gitdockerspringboot-0.1.0.jar app.jar
 RUN sh -c 'touch /app.jar'
 ENV JAVA_OPTS=""
