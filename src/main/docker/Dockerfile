@@ -1,6 +1,3 @@
-FROM frolvlad/alpine-oraclejdk8:slim
-RUN -v "$(pwd)":/mnt --workdir /mnt frolvlad/alpine-oraclejdk8:slim
-ADD gitdockerspringboot-0.1.0.jar app.jar
-RUN sh -c 'touch /app.jar'
-ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+FROM openjdk:latest
+COPY target/gitdockerspringboot-1.0-SNAPSHOT.jar /usr/src/gitdockerspringboot-1.0-SNAPSHOT.jar
+CMD java -jar /usr/src/gitdockerspringboot-1.0-SNAPSHOT.jar
