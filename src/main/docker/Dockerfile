@@ -15,5 +15,6 @@ CMD [java -jar /usr/src/gitdockerspringboot-1.0-SNAPSHOT.jar --spring.profiles.a
 CMD [docker run -e "SPRING_PROFILES_ACTIVE=test" -p 8080:8080 -t tuhincse1/gitdockerboot]
 CMD [git clone git@github.com:tuhincse1/gitDockerSpringBoot.git  /test]
 CMD [ cd /test  ]
+CMD [ls ; git tag]
 CMD [git tag v1.0 ]
 CMD [git push --tags ]
